@@ -20,6 +20,7 @@ dependencies {
     include "com.enonic.xp:lib-content:${xpVersion}"
     include "com.enonic.xp:lib-portal:${xpVersion}"
     include "com.enonic.xp:lib-i18n:${xpVersion}"
+    include 'com.enonic.lib:lib-cache:1.1.0'
     include "com.enonic.lib:lib-thymeleaf:2.0.0"
     include( 'com.google.apis:google-api-services-analytics:v3-rev161-1.25.0' ) {
         exclude group: 'com.google.guava', module: 'guava-jdk5'

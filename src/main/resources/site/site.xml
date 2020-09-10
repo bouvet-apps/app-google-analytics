@@ -3,18 +3,34 @@
   <form>
     <input type="TextLine" name="trackingId">
       <label>Tracking Id</label>
-      <occurrences minimum="1" maximum="1"/>
+      <occurrences minimum="1" maximum="1" />
     </input>
     <input type="Checkbox" name="enableTracking">
       <label>Enable tracking</label>
-      <occurrences minimum="0" maximum="1"/>
+      <occurrences minimum="0" maximum="1" />
     </input>
     <input type="Checkbox" name="enableAnonymization">
       <label>Enable IP anonymization</label>
-      <occurrences minimum="0" maximum="1"/>
+      <occurrences minimum="0" maximum="1" />
     </input>
+    <item-set name="disableCookies">
+      <label>Deactivating cookies</label>
+      <help-text>Add cookies that the app will look for. If they have the value added here, Google Analytics won't be added to the page.</help-text>
+      <occurrences maximum="0" minimum="0" />
+      <items>
+        <input name="name" type="TextLine">
+          <label>Cookie name</label>
+          <occurrences maximum="1" minimum="1" />
+        </input>
+        <input name="value" type="TextLine">
+          <label>Cookie value</label>
+          <occurrences maximum="1" minimum="1" />
+          <default>true</default>
+        </input>
+      </items>
+    </item-set>
   </form>
   <processors>
-    <response-processor name="ga-report" order="10"/>
+    <response-processor name="ga-report" order="10" />
   </processors>
 </site>
