@@ -50,7 +50,7 @@ exports.responseProcessor = function (req, res) {
         }
 
         for (var cookieIndex = 0; cookieIndex < disableCookies.length; cookieIndex++) {
-            const disableCookie = disableCookies[cookieIndex];
+            var disableCookie = disableCookies[cookieIndex];
 
             if (cookies[disableCookie.name] === disableCookie.value) {
                 return res;
