@@ -12,6 +12,10 @@ var siteConfigCache = cacheLib.newCache({
 });
 
 exports.responseProcessor = function (req, res) {
+    if (req.mode !== 'live') {
+        return res;
+    }
+
     var site = portalLib.getSite();
 
     if (site && site._path) {
@@ -29,10 +33,6 @@ exports.responseProcessor = function (req, res) {
         var disableCookies = siteConfig['disableCookies'];
 
         if (!trackingID || !enableTracking) {
-            return res;
-        }
-
-        if (req.mode !== 'live') {
             return res;
         }
 
