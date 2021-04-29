@@ -19,7 +19,7 @@ exports.responseProcessor = function (req, res) {
     var site = portalLib.getSite();
 
     if (site && site._path) {
-        var siteConfig = siteConfigCache.get(req.branch + "_" + site._path, function () {
+        var siteConfig = siteConfigCache.get(req.branch + "_" + site._id, function () {
             var config = portalLib.getSiteConfig() || {};
             config.disableCookies = forceArray(config.disableCookies);
             config.disableCookies.push({ name: app.name.replace(/\./g, "-") + "_disabled", value: "true" });
